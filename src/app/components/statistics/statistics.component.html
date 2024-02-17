@@ -1,0 +1,20 @@
+<div class="card">
+    <p-table responsiveLayout="scroll" [value]="dataSource">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th>State Name </th>
+                <th>Confirmed</th>
+                <th>Recoverd</th>
+                <th>Deseased</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-state let-columns="columns">
+            <tr *ngIf="state.name && state.confirmed && state.recoverd && state.deseased">
+                <td>{{state.name}}</td>
+                <td>{{state.confirmed}}</td>
+                <td>{{state.recoverd}}</td>
+                <td>{{state.deseased}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

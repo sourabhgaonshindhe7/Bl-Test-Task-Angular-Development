@@ -1,0 +1,30 @@
+<div class="mainClass">
+  <div class="section">
+    <h1>Please Select State</h1>
+
+    <mat-form-field [formGroup]="formGroup">
+      <mat-label>Select State</mat-label>
+      <mat-select formControlName="selectedState" (selectionChange)="onSelectState($event)">
+        <mat-option *ngFor="let state of newStates | keyvalue" [value]="state.key">{{state.value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+
+  <div class="section">
+    <h1>State Wise Covid Data</h1>
+
+    <div class="card">
+      <p-chart type="doughnut" [data]="donutData" [options]="chartOptions" [style]="{'width': '10px'}"></p-chart>
+
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h1>District wise Covid Data</h1>
+    <div class="card">
+      <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+    </div>
+  </div>
+</div>
